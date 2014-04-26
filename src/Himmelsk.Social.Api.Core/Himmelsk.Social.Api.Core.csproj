@@ -96,10 +96,17 @@
     <Compile Include="LinkedIn\Commands\People\PeopleShare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Twitter\Commands\AbstractTwitterCommand.cs" />
+    <Compile Include="Twitter\Commands\Followers\FollowerIdsCommand.cs" />
+    <Compile Include="Twitter\Commands\Statuses\StatusesUpdateCommand.cs" />
     <Compile Include="Twitter\ITwitterClient.cs" />
     <Compile Include="Twitter\ITwitterCredentials.cs" />
+    <Compile Include="Twitter\Results\UserIdListResult.cs" />
     <Compile Include="Twitter\TwitterClient.cs" />
+    <Compile Include="Twitter\TwitterCommandExecuter.cs" />
     <Compile Include="Twitter\TwitterCredentials.cs" />
+    <Compile Include="Twitter\UserFriendly\ITwitterFollowersCommands.cs" />
+    <Compile Include="Twitter\UserFriendly\ITwitterStatusesCommands.cs" />
+    <Compile Include="Twitter\UserFriendly\TwitterCommands.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

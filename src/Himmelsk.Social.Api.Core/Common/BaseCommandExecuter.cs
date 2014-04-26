@@ -66,8 +66,9 @@ namespace Himmelsk.Social.Api.Core.Common {
 
             Error error = null;
             TResult formattedResult = default(TResult);
+            var statusCode = (int) response.StatusCode;
 
-            if ((int)response.StatusCode == 500) {
+            if (statusCode == 500 || statusCode == 403 || statusCode == 401) {
                 throw new ApiErrorException(new Result<Error> {
                     Raw = result,
                     Typed = command.FormatError(result, response.ContentType),

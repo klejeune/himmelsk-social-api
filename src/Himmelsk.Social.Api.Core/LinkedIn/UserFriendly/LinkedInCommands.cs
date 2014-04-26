@@ -11,8 +11,6 @@ namespace Himmelsk.Social.Api.Core.LinkedIn.UserFriendly {
 
         public LinkedInCommands(ICommandExecuter<ILinkedInCredentials> executer) {
             this.executer = executer;
-            this.Companies = this;
-            this.People = this;
         }
 
         public IResult<CompanyUpdates> GetUpdates(ILinkedInCredentials credentials, string companyId) {
@@ -43,9 +41,6 @@ namespace Himmelsk.Social.Api.Core.LinkedIn.UserFriendly {
                     SubmittedImageUrl = submittedImageUrl,
                 });
         }
-
-        public ILinkedInCompaniesCommands Companies { get; private set; }
-        public ILinkedInPeopleCommands People { get; private set; }
 
         IResult<ShareResult> ILinkedInPeopleCommands.Share(ILinkedInCredentials credentials, ShareVisibility visibility, string comment) {
             return this.executer.Execute(

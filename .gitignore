@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Himmelsk.Social.Api.Core/bin/Debug
+/src/Himmelsk.Social.Api.Core/obj/Debug
+*.user
+*.suo
+/src/packages

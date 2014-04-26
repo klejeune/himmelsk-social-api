@@ -66,15 +66,15 @@ namespace Himmelsk.Social.Api.Core.Common {
         protected virtual T FormatResult<T>(string value, string contentType) where T : class {
             T result;
 
-            if (contentType.StartsWith("application/json") || contentType.StartsWith("text/javascript")) {
+            if (typeof(T) == typeof (string)) {
+                return value as T;
+            }
+            else if (contentType.StartsWith("application/json") || contentType.StartsWith("text/javascript")) {
                 var settings = new JsonSerializerSettings {
                     ContractResolver = new LinkedInJsonConverter(),
                 };
 
                 result = JsonConvert.DeserializeObject<T>(value, settings);
-            }
-            else if (contentType.StartsWith("text/plain") && typeof(T) == typeof (string)) {
-                return value as T;
             }
             else if (false) {
                 var serializer = new XmlSerializer(typeof(T));
