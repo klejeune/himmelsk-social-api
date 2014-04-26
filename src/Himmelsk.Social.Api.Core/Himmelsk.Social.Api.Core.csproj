@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{673A704A-DF5A-4696-B3DA-33906C1FFC0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Himmelsk.Social.Api.Core</RootNamespace>
+    <AssemblyName>Himmelsk.Social.Api.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AbstractCommand.cs" />
+    <Compile Include="Common\BaseCommandExecuter.cs" />
+    <Compile Include="Common\AbstractCredentials.cs" />
+    <Compile Include="Common\ICredentials.cs" />
+    <Compile Include="Common\SocialClient.cs" />
+    <Compile Include="Facebook\AbstractFacebookCommand.cs" />
+    <Compile Include="Facebook\Commands\GetAccessTokenCommand.cs" />
+    <Compile Include="Facebook\Commands\User\IdResult.cs" />
+    <Compile Include="Facebook\Commands\User\PublishUserFeedCommand.cs" />
+    <Compile Include="Facebook\FacebookAnonymousCommandExecuter.cs" />
+    <Compile Include="Facebook\FacebookClient.cs" />
+    <Compile Include="Facebook\FacebookCommandExecuter.cs" />
+    <Compile Include="Facebook\FacebookAppCredentials.cs" />
+    <Compile Include="Facebook\FacebookEmptyCredentials.cs" />
+    <Compile Include="Facebook\IFacebookClient.cs" />
+    <Compile Include="Facebook\IFacebookCredentials.cs" />
+    <Compile Include="Facebook\IFacebookEmptyCredentials.cs" />
+    <Compile Include="Facebook\Results\AccessTokenResult.cs" />
+    <Compile Include="Facebook\UserFriendly\FacebookCommands.cs" />
+    <Compile Include="Facebook\UserFriendly\IUserCommands.cs" />
+    <Compile Include="LinkedIn\Commands\AbstractLinkedInCommand.cs" />
+    <Compile Include="Common\CommandVerb.cs" />
+    <Compile Include="LinkedIn\Commands\Companies\CompanyShare.cs" />
+    <Compile Include="LinkedIn\Commands\Companies\GetCompanyUpdates.cs" />
+    <Compile Include="LinkedIn\Commands\Companies\Parameters\Share.cs" />
+    <Compile Include="LinkedIn\Commands\Companies\Parameters\ShareVisibility.cs" />
+    <Compile Include="LinkedIn\Commands\ICommandExecuter.cs" />
+    <Compile Include="LinkedIn\Commands\ICommand.cs" />
+    <Compile Include="LinkedIn\Commands\IParameter.cs" />
+    <Compile Include="LinkedIn\Commands\IParameterRegisterer.cs" />
+    <Compile Include="LinkedIn\LinkedInCommandExecuter.cs" />
+    <Compile Include="LinkedIn\Results\ApiErrorException.cs" />
+    <Compile Include="LinkedIn\UserFriendly\ILinkedInCompaniesCommands.cs" />
+    <Compile Include="LinkedIn\UserFriendly\ILinkedInPeopleCommands.cs" />
+    <Compile Include="LinkedIn\UserFriendly\LinkedInCommands.cs" />
+    <Compile Include="LinkedIn\Commands\Parameter.cs" />
+    <Compile Include="LinkedIn\Converters\LinkedInJsonConverter.cs" />
+    <Compile Include="LinkedIn\ILinkedInClient.cs" />
+    <Compile Include="LinkedIn\ILinkedInCredentials.cs" />
+    <Compile Include="LinkedIn\LinkedInClient.cs" />
+    <Compile Include="LinkedIn\LinkedInCredentials.cs" />
+    <Compile Include="LinkedIn\RemoteErrorException.cs" />
+    <Compile Include="LinkedIn\Results\Companies\Company.cs" />
+    <Compile Include="LinkedIn\Results\Companies\CompanyUpdate.cs" />
+    <Compile Include="LinkedIn\Results\Companies\CompanyUpdates.cs" />
+    <Compile Include="LinkedIn\Results\Companies\ShareResult.cs" />
+    <Compile Include="LinkedIn\Results\Companies\UpdateContent.cs" />
+    <Compile Include="LinkedIn\Results\Error.cs" />
+    <Compile Include="LinkedIn\Results\IResult.cs" />
+    <Compile Include="LinkedIn\Results\Result.cs" />
+    <Compile Include="LinkedIn\Commands\People\PeopleShare.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Twitter\Commands\AbstractTwitterCommand.cs" />
+    <Compile Include="Twitter\ITwitterClient.cs" />
+    <Compile Include="Twitter\ITwitterCredentials.cs" />
+    <Compile Include="Twitter\TwitterClient.cs" />
+    <Compile Include="Twitter\TwitterCredentials.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LinkedIn\Results\People\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
