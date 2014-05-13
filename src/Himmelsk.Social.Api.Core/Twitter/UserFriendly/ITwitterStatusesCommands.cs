@@ -11,5 +11,6 @@ namespace Himmelsk.Social.Api.Core.Twitter.UserFriendly {
     public interface ITwitterStatusesCommands {
         IResult<string> UpdateStatus(ITwitterCredentials credentials, string status);
         IResult<Tweet[]> UserTimeline(ITwitterCredentials credentials, string username);
+        IResult<Tweet[]> HomeTimeline(ITwitterCredentials credentials);
     }
 }

@@ -29,12 +29,17 @@ namespace Himmelsk.Social.Api.Core.Twitter.UserFriendly {
                     Status = status,
                 });
         }
-        
+
         public IResult<Results.Tweet[]> UserTimeline(ITwitterCredentials credentials, string username) {
             return this.executer.Execute(
                 credentials, new StatusesUserTimelineCommand {
                     Username = username
                 });
+        }
+
+        public IResult<Results.Tweet[]> HomeTimeline(ITwitterCredentials credentials) {
+            return this.executer.Execute(
+                credentials, new StatusesHomeTimelineCommand {});
         }
     }
 }

@@ -13,6 +13,8 @@ A simple C# library for accessing social networks REST APIs.
 - Twitter
   - Followers/Ids
   - Statuses/Update
+  - Statuses/UserTimeline
+  - Statuses/HomeTimeline
   
 ### Dependencies
 I try to keep the number of dependencies to a minimum. It currently only references Json.NET, which is available as a NuGet package and as a Xamarin component.

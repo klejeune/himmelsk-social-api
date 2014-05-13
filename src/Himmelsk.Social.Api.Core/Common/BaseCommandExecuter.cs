@@ -111,7 +111,14 @@ namespace Himmelsk.Social.Api.Core.Common {
         }
 
         private string GetFullUri(ICommand command) {
-            return command.BaseUrl + "?" + string.Join("&", command.GetParameters.Select(pair => pair.Key + '=' + pair.Value));
+            var parameters = command.GetParameters.ToList();
+            var url = command.BaseUrl;
+
+            if (parameters.Any()) {
+                url += "?" + string.Join("&", parameters.Select(pair => pair.Key + '=' + pair.Value));
+            }
+
+            return url;
         }
 
         private string GetPost(ICommand command) {
