@@ -10,5 +10,7 @@ namespace Himmelsk.Social.Api.Core.Twitter {
         ITwitterCredentials GetCredentials(string consumerKey, string consumerSecret, string token, string tokenSecret);
         ITwitterFollowersCommands Followers { get; }
         ITwitterStatusesCommands Statuses { get; }
+        ITwitterSearchCommands Search { get; }
+        ITwitterApplicationCommands Application { get; }
     }
 }

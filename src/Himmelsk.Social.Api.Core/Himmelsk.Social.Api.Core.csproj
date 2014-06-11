@@ -47,6 +47,7 @@
     <Compile Include="Common\BaseCommandExecuter.cs" />
     <Compile Include="Common\AbstractCredentials.cs" />
     <Compile Include="Common\ICredentials.cs" />
+    <Compile Include="Common\LibCamelCaseContractResolver.cs" />
     <Compile Include="Common\SocialClient.cs" />
     <Compile Include="Facebook\AbstractFacebookCommand.cs" />
     <Compile Include="Facebook\Commands\GetAccessTokenCommand.cs" />
@@ -96,18 +97,29 @@
     <Compile Include="LinkedIn\Commands\People\PeopleShare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Twitter\Commands\AbstractTwitterCommand.cs" />
+    <Compile Include="Twitter\Commands\Application\ApplicationRateLimitStatusCommand.cs" />
     <Compile Include="Twitter\Commands\Followers\FollowerIdsCommand.cs" />
+    <Compile Include="Twitter\Commands\Search\SearchTweetsCommand.cs" />
     <Compile Include="Twitter\Commands\Statuses\StatusesHomeTimelineCommand.cs" />
     <Compile Include="Twitter\Commands\Statuses\StatusesUpdateCommand.cs" />
     <Compile Include="Twitter\Commands\Statuses\StatusesUserTimelineCommand.cs" />
     <Compile Include="Twitter\ITwitterClient.cs" />
     <Compile Include="Twitter\ITwitterCredentials.cs" />
+    <Compile Include="Twitter\Results\Language.cs" />
+    <Compile Include="Twitter\Results\RateLimitStatusResult.cs" />
+    <Compile Include="Twitter\Results\StatusesResult.cs" />
     <Compile Include="Twitter\Results\Tweet.cs" />
+    <Compile Include="Twitter\Results\TweetsResultType.cs" />
+    <Compile Include="Twitter\Results\TwitterSearchMetadata.cs" />
+    <Compile Include="Twitter\Results\User.cs" />
     <Compile Include="Twitter\Results\UserIdListResult.cs" />
     <Compile Include="Twitter\TwitterClient.cs" />
     <Compile Include="Twitter\TwitterCommandExecuter.cs" />
     <Compile Include="Twitter\TwitterCredentials.cs" />
+    <Compile Include="Twitter\TwitterDateTimeConverter.cs" />
+    <Compile Include="Twitter\UserFriendly\ITwitterApplicationCommands.cs" />
     <Compile Include="Twitter\UserFriendly\ITwitterFollowersCommands.cs" />
+    <Compile Include="Twitter\UserFriendly\ITwitterSearchCommands.cs" />
     <Compile Include="Twitter\UserFriendly\ITwitterStatusesCommands.cs" />
     <Compile Include="Twitter\UserFriendly\TwitterCommands.cs" />
   </ItemGroup>

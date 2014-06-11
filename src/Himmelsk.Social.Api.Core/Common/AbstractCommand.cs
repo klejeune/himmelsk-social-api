@@ -70,9 +70,7 @@ namespace Himmelsk.Social.Api.Core.Common {
                 return value as T;
             }
             else if (contentType.StartsWith("application/json") || contentType.StartsWith("text/javascript")) {
-                var settings = new JsonSerializerSettings {
-                    ContractResolver = new LinkedInJsonConverter(),
-                };
+                var settings = this.CreateJsonSettings();
 
                 result = JsonConvert.DeserializeObject<T>(value, settings);
             }
@@ -88,6 +86,12 @@ namespace Himmelsk.Social.Api.Core.Common {
             }
 
             return result;
+        }
+
+        protected virtual JsonSerializerSettings CreateJsonSettings() {
+            return new JsonSerializerSettings {
+                ContractResolver = new LinkedInJsonConverter(),
+            };
         }
 
         public TResult FormatResult(string value, string contentType) {

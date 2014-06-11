@@ -19,5 +19,10 @@ namespace Himmelsk.Social.Api.Core.Twitter {
 
         public ITwitterFollowersCommands Followers { get { return this.commands; } }
         public ITwitterStatusesCommands Statuses { get { return this.commands; } }
+        public ITwitterApplicationCommands Application { get { return this.commands; } }
+        
+        public ITwitterSearchCommands Search {
+            get { return this.commands; }
+        }
     }
 }

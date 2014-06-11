@@ -11,7 +11,9 @@ A simple C# library for accessing social networks REST APIs.
 - Facebook
   - User/PublishUserFeed
 - Twitter
+  - Application/RateLimitStatus
   - Followers/Ids
+  - Search/Tweets
   - Statuses/Update
   - Statuses/UserTimeline
   - Statuses/HomeTimeline
